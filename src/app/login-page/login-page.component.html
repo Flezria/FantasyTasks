@@ -1,0 +1,45 @@
+<div class="ui middle aligned centered grid full-height">
+  <div class="four wide column">
+
+    <h1 class="ui top attached center aligned header">
+        <b class="dragon-color">FantasyTasks</b> <i class="ra ra-dragon ra-2x dragon-color"></i>
+        <br />
+        Sign in
+    </h1>
+
+    <div class="ui attached rasied segment">
+
+      <form class="ui form">
+        <div class="field">
+          <label>Email <i class="ra ra-wooden-sign"></i></label>
+          <input name="email" [(ngModel)]="email" placeholder="Email" type="text">
+        </div>
+        <div class="field">
+          <label>Password <i class="ra ra-key"></i></label>
+          <input name="password" [(ngModel)]="password" placeholder="Password" type="password">
+        </div>
+        <div (click)="login()" class="ui animated black basic large button">
+          <div class="visible content">Login</div>
+          <div class="hidden content">
+              <i class="sign in alternate icon"></i>
+          </div>
+        </div>
+      </form>
+      
+      <div class="ui horizontal divider">
+        Or
+      </div>
+
+      <div class="ui center aligned basic segment">
+        <a routerLink="/signup">
+          <div class="ui big green labeled icon button">
+            <i class="signup icon"></i>
+            Sign Up
+          </div>
+        </a>
+      </div>
+      
+    </div>
+
+  </div>
+</div>

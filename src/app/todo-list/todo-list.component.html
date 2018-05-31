@@ -1,0 +1,40 @@
+<div class="ui segments" style="background: white;">
+  <div class="ui center aligned segment">
+    <b><i class="ra ra-scroll-unfurled ra-2x"></i>&nbsp;&nbsp;&nbsp;Quest list&nbsp;&nbsp;&nbsp;<i class="ra ra-scroll-unfurled ra-2x"></i></b>
+  </div>
+  <div class="ui segments">
+    <todo-item-template *ngFor="let todoItem of todoList | async" [todoItem]="todoItem"></todo-item-template>
+  </div>
+</div>
+<div class="ui segment">
+  <div class="ui horizontal divider">
+    Add new quest
+  </div>
+  <div class="ui form" [formGroup]="todoForm">
+    <div class="three fields">
+      <div class="four wide field">
+        <sui-select formControlName="category" class="ui compact selection dropdown" placeholder="Category">
+          <sui-select-option *ngFor="let category of categories" [value]="category"></sui-select-option>
+        </sui-select>
+      </div>
+      <div class="ten wide field">
+        <input formControlName="questTitle" placeholder="Quest title" type="text" />
+      </div>
+      <div class="two wide field">
+          <sui-select formControlName="category" class="ui icon dropdown black basic button" placeholder="$">
+            <div class="header">Quest reward</div>
+            <sui-select-option *ngFor="let reward of rewards" [value]="reward"></sui-select-option>
+          </sui-select>
+      </div>
+    </div>
+    <div class="field">
+      <textarea formControlName="questText" placeholder="Quest text" rows="2"></textarea>
+    </div>
+      <div (click)="addTodo()" class="ui animated black basic button" [ngClass]="{ 'disableDiv': !todoForm.valid }">
+        <div class="visible content">Add Quest</div>
+        <div class="hidden content">
+            <i class="large plus square outline icon"></i>
+        </div>
+      </div>
+    </div>
+  </div>

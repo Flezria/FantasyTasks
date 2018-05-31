@@ -1,1 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
+* { padding:0; margin:0 }
+
+html, body {
+    height: 100%;
+    background: #F0FFFF;
+}
+
+.full-height {
+    height: 100%;
+}
+
+.dragon-color {
+    color: #4169E1;
+}
+
+.disableDiv{
+    pointer-events:none;
+}

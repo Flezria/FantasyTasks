@@ -1,0 +1,25 @@
+<div class="ui segment" [ngClass]="{ 'todo-complete' : todoItem.isComplete }">
+  <div class="ui grid">
+    <div class="row">
+      <div class="fourteen wide column">
+        <h4>{{ todoItem.questTitle }}</h4>
+      </div>
+      <div class="two wide column">
+        <a *ngIf="!todoItem.isComplete" (click)="delete()" class="ui mini red label">Delete</a>
+      </div>
+    </div>
+    <div class="row no-padding">
+      <div class="column">
+        {{ todoItem.questText }}
+      </div>
+    </div>
+    <div class="row">
+      <div class="twelve wide column">
+        Category:&nbsp; <b>{{ todoItem.category }}</b>
+      </div>
+      <div class="four wide column">
+        <sui-checkbox (click)="completeTodo()" [ngModel]="todoItem.isComplete">Complete</sui-checkbox>
+      </div>
+    </div>
+  </div>
+</div>

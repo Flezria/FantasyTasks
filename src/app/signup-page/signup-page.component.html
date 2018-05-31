@@ -1,0 +1,51 @@
+<div class="ui middle aligned centered grid full-height">
+    <div class="four wide column">
+  
+      <h1 class="ui top attached center aligned header">
+          <b class="dragon-color">FantasyTasks</b> <i class="ra ra-dragon ra-2x dragon-color"></i>
+          <br />
+          Sign up
+      </h1>
+  
+      <div class="ui attached rasied segment">
+  
+        <form class="ui form" [formGroup]="signupForm">
+          <div class="ui horizontal divider">
+            Login info
+          </div>
+          <div class="field">
+            <label>Email <i class="ra ra-wooden-sign"></i></label>
+            <input formControlName="email" name="email" placeholder="Email" type="text">
+          </div>
+          <div class="field">
+            <label>Password <i class="ra ra-key"></i></label>
+            <input formControlName="password" name="password" placeholder="Password" type="password">
+          </div>
+
+          <div class="ui horizontal divider">
+            Personal info
+          </div>
+          <div class="field">
+            <label>First name <i class="ra ra-player"></i></label>
+            <input formControlName="firstname" name="first-name" placeholder="First name" type="text">
+          </div>
+          <div class="field">
+            <label>Last name <i class="ra ra-player"></i></label>
+            <input formControlName="lastname" name="last-name" placeholder="Last name" type="text">
+          </div>
+          <div class="field">
+            <label>Character name <i class="ra ra-helmet"></i></label>
+            <input formControlName="charactername" name="character-name" placeholder="Character name" type="text">
+          </div>
+          <div (click)="signup()" class="ui animated black basic large button" [ngClass]="{ 'disableDiv': !signupForm.valid }">
+            <div class="visible content">Sign up</div>
+            <div class="hidden content">
+                <i class="save outline icon"></i>
+            </div>
+          </div>
+        </form>
+        
+      </div>
+  
+    </div>
+  </div>
